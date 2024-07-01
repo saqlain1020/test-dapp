@@ -79,8 +79,8 @@ const Home = () => {
     console.log("receipt =>", receipt);
   };
   return (
-    <div onClick={() => connect({ connector: connectors[0] })}>
-      <p>{address ? address : "Connect"}</p>
+    <div>
+      <button onClick={() => connect({ connector: connectors[0] })}>{address ? address : "Connect"}</button>
       <p>Chain ID: {chainId}</p>
       <button onClick={signMsg}>Sign Msg</button>
       <button onClick={switchChain}>Switch Chain</button>
