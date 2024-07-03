@@ -11,7 +11,7 @@ import {
   usePublicClient,
   useSignTypedData,
 } from "wagmi";
-import { optimism } from "wagmi/chains";
+import { optimism, polygonAmoy } from "wagmi/chains";
 
 const tokenAddr = "0xe2e53a7a1a39ba52249cee280c1f5c3c70fb0d43";
 
@@ -32,7 +32,8 @@ const Home = () => {
   };
 
   const switchChain = async () => {
-    await switchChainAsync({ chainId: optimism.id });
+    if (chainId !== optimism.id) await switchChainAsync({ chainId: optimism.id });
+    else await switchChainAsync({ chainId: polygonAmoy.id });
   };
 
   const estimateGasAction = async () => {
