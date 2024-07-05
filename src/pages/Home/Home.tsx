@@ -227,6 +227,9 @@ const Home = () => {
   return (
     <div>
       <button onClick={() => connect({ connector: connectors[0] })}>{address ? address : "Connect"}</button>
+      <button onClick={() => connect({ connector: connectors[1] })}>
+        {address ? address : "Connect WalletConnect"}
+      </button>
       <p>Chain ID: {chainId}</p>
       <button onClick={signMsg}>Sign Msg</button>
       <button onClick={switchChain}>Switch Chain</button>
