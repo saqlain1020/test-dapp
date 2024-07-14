@@ -10,6 +10,7 @@ import {
   useWalletClient,
   usePublicClient,
   useSignTypedData,
+  useDisconnect,
 } from "wagmi";
 import { optimism, polygonAmoy } from "wagmi/chains";
 
@@ -21,6 +22,7 @@ const Home = () => {
   const { address } = useAccount();
   const { data: walletClient } = useWalletClient();
   const publicClient = usePublicClient();
+  const { disconnect } = useDisconnect();
   const { switchChainAsync } = useSwitchChain();
   const chainId = useChainId();
   const { signTypedDataAsync } = useSignTypedData();
@@ -236,6 +238,7 @@ const Home = () => {
       <button onClick={estimateGasAction}>Estimate Gas</button>
       <button onClick={sendTx}>Send Tx</button>
       <button onClick={signTypedData}>Sign Typed Data</button>
+      <button onClick={() => disconnect()}>Disconnect</button>
     </div>
   );
 };
