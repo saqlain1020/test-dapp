@@ -1,4 +1,4 @@
-import { erc20Abi, getContract, parseEther, parseUnits, zeroAddress } from "viem";
+import { erc20Abi, getContract, parseEther } from "viem";
 import { verifyTypedData, waitForTransactionReceipt } from "viem/actions";
 import {
   useAccount,
@@ -6,7 +6,6 @@ import {
   useChainId,
   useSignMessage,
   useSwitchChain,
-  useEstimateGas,
   useWalletClient,
   usePublicClient,
   useSignTypedData,
@@ -17,7 +16,7 @@ import { optimism, polygonAmoy } from "wagmi/chains";
 const tokenAddr = "0xe2e53a7a1a39ba52249cee280c1f5c3c70fb0d43";
 
 const Home = () => {
-  const { connectors, connect, status, error } = useConnect();
+  const { connectors, connect } = useConnect();
   const { signMessageAsync } = useSignMessage();
   const { address } = useAccount();
   const { data: walletClient } = useWalletClient();

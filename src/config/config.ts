@@ -1,6 +1,6 @@
 import { http, createConfig } from "wagmi";
 import { mainnet, sepolia, polygonAmoy, optimism } from "wagmi/chains";
-import { injected, metaMask, walletConnect } from "wagmi/connectors";
+import { injected, walletConnect } from "wagmi/connectors";
 
 export const config = createConfig({
   chains: [mainnet, sepolia, polygonAmoy, optimism],
